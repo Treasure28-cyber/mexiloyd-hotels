@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { photos } from '../data.js';
 import { Photo } from '../components/Photo.jsx';
+import { PageHero } from '../components/PageHero.jsx';
 
 const filters = ['All', 'Rooms', 'Bathrooms', 'Bar & Lounge', 'Conference', 'Exterior'];
 
@@ -23,8 +24,8 @@ export default function GalleryPage() {
     if (event.key === 'ArrowRight') { event.preventDefault(); move(1); }
     if (event.key === 'ArrowLeft') { event.preventDefault(); move(-1); }
   };
-  return <><section className="section"><div className="wrap">
-    <div className="section-head"><div><h1>Take a look around.</h1><p style={{ marginTop: 24 }}>The rooms, the details, the places to unwind.<br />A closer look at Mexiloyd Hotels.</p></div><span style={{ fontSize: 14, color: 'var(--muted)' }}>20 photographs · One warm welcome</span></div>
+  return <><PageHero title="Take a look around." description="The rooms, the details, the places to unwind. A closer look at Mexiloyd Hotels." photo="exterior-front" page="Gallery" /><section className="section"><div className="wrap">
+    <div className="section-head"><div><h2>Every space, every detail.</h2><p style={{ marginTop: 20 }}>Explore the hotel, one photograph at a time.</p></div><span style={{ fontSize: 14, color: 'var(--muted)' }}>20 photographs · One warm welcome</span></div>
     <div className="chips" role="group" aria-label="Filter gallery">{filters.map(label => <button key={label} className={`chip ${filter === label ? 'active' : ''}`} aria-pressed={filter === label} onClick={() => { setFilter(label); setCurrent(null); }}>{label}</button>)}</div>
     <p className="notice" aria-live="polite" style={{ marginBottom: 20 }}>Showing {filter === 'All' ? 'all ' : ''}{items.length} photographs</p>
     <div className="gallery-grid">{items.map((photo, index) => <button className="gallery-item" key={photo.file} aria-label={`Enlarge: ${photo.alt}`} onClick={event => { trigger.current = event.currentTarget; setCurrent(index); }}>

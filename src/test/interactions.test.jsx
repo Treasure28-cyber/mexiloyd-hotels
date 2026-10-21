@@ -11,15 +11,15 @@ import { localDate, nextDate } from '../lib/booking.js';
 
 describe('React interactions',()=>{
   it('shows all 20 photos and filters to bathrooms',async()=>{
-    const user=userEvent.setup(); render(<GalleryPage />);
+    const user=userEvent.setup(); render(<MemoryRouter><GalleryPage /></MemoryRouter>);
     expect(screen.getAllByRole('button',{name:/Enlarge:/})).toHaveLength(20);
-    expect(screen.getAllByRole('img').every(img=>img.loading==='lazy'||img.getAttribute('loading')==='lazy')).toBe(true);
+    expect([...document.querySelectorAll('.gallery-grid img')].every(img=>img.getAttribute('loading')==='lazy')).toBe(true);
     await user.click(screen.getByRole('button',{name:'Bathrooms',exact:true}));
     expect(screen.getAllByRole('button',{name:/Enlarge:/})).toHaveLength(1);
-    expect(screen.getByRole('img').alt).toContain('frosted glass');
+    expect(document.querySelector('.gallery-grid img').alt).toContain('frosted glass');
   });
   it('navigates a lightbox and closes it with Escape, restoring focus',async()=>{
-    const user=userEvent.setup(); render(<GalleryPage />);
+    const user=userEvent.setup(); render(<MemoryRouter><GalleryPage /></MemoryRouter>);
     const trigger=screen.getAllByRole('button',{name:/Enlarge:/})[0]; await user.click(trigger);
     const dialog=screen.getByRole('dialog');
     expect(dialog.open).toBe(true);

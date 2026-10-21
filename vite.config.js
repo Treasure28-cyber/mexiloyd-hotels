@@ -10,5 +10,5 @@ export default defineConfig({
       input: Object.fromEntries(['','rooms','facilities','gallery','about','contact'].map(page=>[page||'home',resolve(page ? `${page}/index.html` : 'index.html')])),
     },
   },
-  test: { environment: 'jsdom', setupFiles: ['./src/test/setup.js'], css: false },
+  test: { include: ['src/test/**/*.{test,spec}.{js,jsx}'], environment: 'jsdom', setupFiles: ['./src/test/setup.js'], css: false },
 });

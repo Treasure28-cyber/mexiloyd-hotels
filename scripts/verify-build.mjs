@@ -21,7 +21,8 @@ for (const page of ['', 'rooms', 'facilities', 'gallery', 'about', 'contact']) {
   }
   for (const script of findAll(doc,node=>node.tagName==='script'&&attr(node,'src'))) assert(fs.existsSync('dist'+attr(script,'src')),`${page}: JS entry`);
   if (page==='gallery') {
-    const gallery=findAll(doc,node=>node.tagName==='img');
+    const grid=findAll(doc,node=>attr(node,'class')==='gallery-grid')[0];
+    const gallery=findAll(grid,node=>node.tagName==='img');
     assert.equal(gallery.length,20);
     assert(gallery.every(node=>attr(node,'loading')==='lazy'));
   }
