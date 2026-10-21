@@ -144,27 +144,12 @@ img, iframe { max-width: 100%; }
 .home-hero .actions { justify-content: center; margin-top: 30px; }
 .home-hero .btn.outline { border-color: #ffffffb3; color: #fff; background: #14151a20; }
 .home-hero .btn.outline:hover { background: #ffffff20; }
-.home-hero .home-hero-rate {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px 10px;
-  margin-top: 28px;
-  padding: 10px 18px;
-  border: 1px solid #ffffff66;
-  border-radius: 12px;
-  background: #14151a45;
-  font-size: 14px;
-}
-.home-hero-rate span { font-size: 14px; }
 @media (max-width: 720px) {
   .home-hero { min-height: 560px; }
   .home-hero .banner-content { padding-block: 56px 64px; }
   .home-hero h1 { font-size: clamp(36px, 9.5vw, 44px); }
   .home-hero .eyebrow { max-width: 28ch; margin-inline: auto; font-size: 14px; line-height: 1.8; }
   .home-hero .actions { gap: 12px; }
-  .home-hero .home-hero-rate { max-width: 100%; padding-inline: 14px; }
 }
 
 .floating a span { display: none; }
@@ -268,7 +253,6 @@ img, iframe { max-width: 100%; }
   .home-hero .hero-divider { margin-block: 18px; }
   .home-hero .actions { margin-top: 22px; }
   .home-hero .btn { padding-inline: 18px; }
-  .home-hero .home-hero-rate { margin-top: 18px; padding-block: 8px; }
   .banner:not(.home-hero) { min-height: 280px; }
   .banner:not(.home-hero) .banner-content { padding-block: 36px; }
   .availability { padding: 20px; gap: 12px; }

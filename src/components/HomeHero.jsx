@@ -14,6 +14,5 @@ export function HomeHero() {
       <a className="btn" href={whatsappUrl()} target="_blank" rel="noopener">Book Direct</a>
       <AppLink className="btn outline" to="/rooms">See our rooms</AppLink>
     </div>
-    <p className="home-hero-rate">Book direct for <strong>today’s room rates</strong></p>
   </PageHero>;
 }
