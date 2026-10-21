@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mexiloyd-hotels-port-harcourt.violetcabin65.chatgpt.site/sitemap.xml

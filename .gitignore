@@ -1,0 +1,15 @@
+node_modules/
+.sites-local/
+*.tar.gz
+*.tgz
+*.zip
+npm-debug.log*
+dist/
+.sites-source/
+outputs/
+.prerender/
+.env.local
+.env.*.local
+.env
+.env.*
+!.env.example
