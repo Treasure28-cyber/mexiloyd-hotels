@@ -69,18 +69,6 @@ img, iframe { max-width: 100%; }
   font-size: 17px;
   line-height: 1.8;
 }
-.hero-breadcrumb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 26px;
-  font-size: 14px;
-  color: #fff;
-}
-.hero-breadcrumb a { text-decoration: underline; text-underline-offset: 4px; }
-.hero-breadcrumb > span[aria-hidden] { opacity: .6; }
 .hero-divider {
   display: block;
   width: 48px;
@@ -128,7 +116,6 @@ img, iframe { max-width: 100%; }
   .banner .banner-content { width: calc(100% - 40px); padding-block: 48px; }
   .banner h1 { font-size: clamp(34px, 9.5vw, 44px); letter-spacing: -1px; }
   .banner p { font-size: 15px; line-height: 1.7; }
-  .hero-breadcrumb { margin-bottom: 22px; }
   .hero-divider { margin-block: 22px; }
   .room-title { flex-wrap: wrap; }
   .price { max-width: 100%; }
@@ -284,7 +271,6 @@ img, iframe { max-width: 100%; }
   .home-hero .home-hero-rate { margin-top: 18px; padding-block: 8px; }
   .banner:not(.home-hero) { min-height: 280px; }
   .banner:not(.home-hero) .banner-content { padding-block: 36px; }
-  .hero-breadcrumb { margin-bottom: 18px; }
   .availability { padding: 20px; gap: 12px; }
   .availability .field label { margin-bottom: 5px; }
   .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; padding-block: 24px; }
