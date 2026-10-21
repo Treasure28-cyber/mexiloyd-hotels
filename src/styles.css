@@ -154,6 +154,85 @@ img, iframe { max-width: 100%; }
 
 .floating a span { display: none; }
 
+.amenities {
+  margin-top: 32px;
+  padding: 28px;
+  border: 1px solid #dfd2bd;
+  border-radius: 16px;
+  background: #f2ebdf;
+}
+.amenities-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.amenities-heading h2 { font-size: 34px; line-height: 1.13; letter-spacing: -.7px; }
+.amenities-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  border: 1px solid #1d4ed833;
+  border-radius: 12px;
+  background: white;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.amenities-rating:hover { border-color: var(--blue); }
+.amenities-rating strong { color: var(--ink); font-size: 16px; }
+.amenities-rating-icon { display: grid; place-items: center; flex: 0 0 34px; color: var(--blue); }
+.amenities-rating-icon svg { width: 30px; height: 30px; }
+.amenities-review-count { display: block; color: var(--muted); }
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.amenity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  padding: 24px 20px;
+  border: 1px solid #e2d9cb;
+  border-radius: 12px;
+  background: white;
+}
+.amenity-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #eaf0ff;
+  color: var(--blue);
+}
+.amenity-icon svg { width: 28px; height: 28px; }
+.amenity-card > div { min-width: 0; }
+.amenity-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: -.2px; }
+.amenity-card p { margin-top: 8px; font-size: 14px; line-height: 1.7; }
+@media (max-width: 1000px) and (min-width: 721px) {
+  .amenity-card { flex-direction: column; padding: 20px; }
+}
+@media (max-width: 720px) {
+  .amenities { margin-top: 24px; padding: 20px; }
+  .amenities-heading { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 20px; }
+  .amenities-heading h2 { font-size: 28px; }
+  .amenities-rating { padding: 10px 14px; }
+  .amenities-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .amenity-card { align-items: center; gap: 14px; padding: 18px 16px; }
+  .amenity-icon { flex-basis: 44px; width: 44px; height: 44px; border-radius: 12px; }
+  .amenity-icon svg { width: 24px; height: 24px; }
+  .amenity-card h3 { font-size: 17px; }
+  .amenity-card p { margin-top: 4px; }
+}
+
 .menu-toggle svg { display: block; width: 22px; height: 22px; margin: auto; }
 .mobile-menu {
   position: fixed;
