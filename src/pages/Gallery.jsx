@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { photos } from '../data.js';
+import { photos, photoCaptionByFile } from '../data.js';
 import { Photo } from '../components/Photo.jsx';
 import { PageHero } from '../components/PageHero.jsx';
 
@@ -29,7 +29,7 @@ export default function GalleryPage() {
     <div className="chips" role="group" aria-label="Filter gallery">{filters.map(label => <button key={label} className={`chip ${filter === label ? 'active' : ''}`} aria-pressed={filter === label} onClick={() => { setFilter(label); setCurrent(null); }}>{label}</button>)}</div>
     <p className="notice" aria-live="polite" style={{ marginBottom: 20 }}>Showing {filter === 'All' ? 'all ' : ''}{items.length} photographs</p>
     <div className="gallery-grid">{items.map((photo, index) => <button className="gallery-item" key={photo.file} aria-label={`Enlarge: ${photo.alt}`} onClick={event => { trigger.current = event.currentTarget; setCurrent(index); }}>
-      <Photo file={photo.file} className="" /><span>{photo.alt}</span>
+      <Photo file={photo.file} className="" /><span>{photoCaptionByFile[photo.file]}</span>
     </button>)}</div>
   </div></section>
   <dialog ref={dialog} aria-label="Hotel photograph" onCancel={event => { event.preventDefault(); setCurrent(null); }} onClose={() => setCurrent(null)} onKeyDown={onKeyDown}>

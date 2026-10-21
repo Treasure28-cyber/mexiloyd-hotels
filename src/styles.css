@@ -179,3 +179,59 @@ img, iframe { max-width: 100%; }
   .home-hero .actions { gap: 12px; }
   .home-hero .home-hero-rate { max-width: 100%; padding-inline: 14px; }
 }
+
+.floating a span { display: none; }
+
+@media (max-width: 720px) {
+  input, select, textarea { font-size: 16px; }
+  .section { padding-block: 40px; }
+  .home-hero { min-height: 0; }
+  .home-hero .banner-content { padding-block: 40px 44px; }
+  .home-hero .eyebrow { display: none; }
+  .home-hero .hero-divider { margin-block: 18px; }
+  .home-hero .actions { margin-top: 22px; }
+  .home-hero .btn { padding-inline: 18px; }
+  .home-hero .home-hero-rate { margin-top: 18px; padding-block: 8px; }
+  .banner:not(.home-hero) { min-height: 280px; }
+  .banner:not(.home-hero) .banner-content { padding-block: 36px; }
+  .hero-breadcrumb { margin-bottom: 18px; }
+  .availability { padding: 20px; gap: 12px; }
+  .availability .field label { margin-bottom: 5px; }
+  .trust { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; padding-block: 24px; }
+  .trust span { font-size: 14px; gap: 8px; }
+  .gallery-grid { gap: 22px; }
+  .gallery-item span { padding-top: 10px; }
+
+  /* A single bottom dock replaces controls floating over cards and form fields. */
+  #root { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+  .floating {
+    inset: auto 0 0;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 20px calc(12px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid #14151a20;
+    background: var(--ivory);
+  }
+  .floating a, .floating .wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 8px;
+    width: auto;
+    max-width: 260px;
+    height: 48px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .floating a span { display: inline; }
+  .floating svg { flex: 0 0 20px; width: 20px; height: 20px; }
+  .footer { padding-bottom: 48px; }
+  body:has(.nav.open) .floating, body:has(dialog[open]) .floating { visibility: hidden; }
+  input, select, textarea, button, a { scroll-margin-block: 110px; }
+  .lightbox-controls { padding-bottom: env(safe-area-inset-bottom, 0px); }
+}

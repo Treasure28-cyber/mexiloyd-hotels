@@ -123,7 +123,8 @@ export const photos = [
 export const rooms = [
   {
     "name": "Royal Studio",
-    "rate": "20,000",
+    "draftRate": "20,000",
+    "rate": null,
     "desc": "A comfortable studio with everything you need for a short stay.",
     "images": [
       "room-royal-studio-bed"
@@ -131,7 +132,8 @@ export const rooms = [
   },
   {
     "name": "Deluxe Studio",
-    "rate": "30,000",
+    "draftRate": "30,000",
+    "rate": null,
     "desc": "More space and finish for business trips and longer stays.",
     "images": [
       "room-deluxe-studio-bed",
@@ -140,7 +142,8 @@ export const rooms = [
   },
   {
     "name": "Queens Royal",
-    "rate": "35,000",
+    "draftRate": "35,000",
+    "rate": null,
     "desc": "A refined room with extra room to relax.",
     "images": [
       "room-queens-royal-bed"
@@ -148,7 +151,8 @@ export const rooms = [
   },
   {
     "name": "Kings Royal",
-    "rate": "40,000",
+    "draftRate": "40,000",
+    "rate": null,
     "desc": "Our most spacious room, for guests who want the best we have.",
     "images": [
       "room-kings-royal-bed",
@@ -157,3 +161,25 @@ export const rooms = [
   }
 ];
 export const photoByFile = Object.fromEntries(photos.map(photo => [photo.file, photo]));
+export const photoCaptionByFile = {
+  'exterior-front': 'Welcome to Mexiloyd',
+  'room-kings-royal-detail': 'Bedroom and dressing area',
+  'lounge-overhead-detail': 'The lounge from above',
+  'lounge-television': 'Time to unwind',
+  'room-deluxe-studio-bed-close': 'Fresh linens, restful nights',
+  'room-royal-studio-bed': 'A comfortable retreat',
+  'room-kings-royal-bed': 'Blue-lit bedroom',
+  'room-deluxe-studio-bed': 'Room to relax',
+  'lounge-ornate-seating': 'Lounge seating',
+  'room-queens-royal-bed': 'Your space to settle in',
+  'lounge-dining': 'Gather around the table',
+  'facilities-kitchen': 'The hotel kitchen',
+  'exterior-courtyard': 'Our entrance and courtyard',
+  'lobby-entrance': 'Step inside',
+  'lobby-reception': 'A warm welcome at reception',
+  'conference-hall': 'Space to meet',
+  'facilities-laundry': 'Details taken care of',
+  'facilities-bar': 'At the bar',
+  'bathroom-glass-shower': 'Glass-enclosed shower',
+  'lobby-staircase': 'Finishing touches',
+};

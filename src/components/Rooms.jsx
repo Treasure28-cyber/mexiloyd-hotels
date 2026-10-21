@@ -16,9 +16,9 @@ export const RoomCard = memo(function RoomCard({ room, index }) {
     </div>
     <div className="room-body">
       <div className="room-title"><h3>{room.name}</h3><span className="room-number">0{index + 1}</span></div>
-      <span className="price">₦[{room.rate}] per night · direct rate</span>
+      <span className="price">{room.rate ? `₦${room.rate} per night · direct rate` : 'Ask for today’s rate · book direct'}</span>
       <p>{room.desc}</p>
-      <div className="features"><span>Air conditioning</span><span>Free WiFi</span><span>[Room features to confirm]</span></div>
+      <div className="features"><span>Air conditioning</span><span>Free WiFi</span><span>Direct booking</span></div>
       <a className="btn" target="_blank" rel="noopener" href={whatsappUrl(`Hello, I'd like to enquire about the ${room.name} at Mexiloyd Hotels. Please confirm the direct rate and availability.`)}>Book this room</a>
     </div>
   </article>;

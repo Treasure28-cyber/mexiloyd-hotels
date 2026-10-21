@@ -1,6 +1,5 @@
 import fs from 'node:fs';
-const origin='https://mexiloyd-hotels-port-harcourt.violetcabin65.chatgpt.site';
-const description='Luxury rooms and suites near Golf Estate, Okuruama, Port Harcourt. Free breakfast, free parking, bar and conference hall. 4.2 on Google from 201 reviews. Book direct.';
+import { SITE_ORIGIN as origin, PAGE_DESCRIPTION as description } from '../site.config.js';
 const schema={'@context':'https://schema.org','@type':'LodgingBusiness',name:'Mexiloyd Hotels',url:origin,telephone:'+2348037165381',image:origin+'/assets/images/exterior-front.webp',address:{'@type':'PostalAddress',streetAddress:'10 Happyland Close, near Golf Estate, Okuruama',addressLocality:'Port Harcourt',addressRegion:'Rivers State',addressCountry:'NG'},aggregateRating:{'@type':'AggregateRating',ratingValue:4.2,reviewCount:201}};
 const pages=['','rooms','facilities','gallery','about','contact'];
 for(const page of pages){
@@ -10,5 +9,6 @@ for(const page of pages){
   fs.writeFileSync(page?`${page}/index.html`:'index.html',html);
 }
 fs.mkdirSync('public',{recursive:true});
+fs.writeFileSync('public/version.json',JSON.stringify({commit:process.env.VERCEL_GIT_COMMIT_SHA||null,builtAt:new Date().toISOString()},null,2));
 fs.writeFileSync('public/robots.txt',`User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`);
 fs.writeFileSync('public/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${pages.map(p=>`<url><loc>${origin}/${p}</loc></url>`).join('')}</urlset>`);

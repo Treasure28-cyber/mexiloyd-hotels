@@ -8,12 +8,12 @@ export function HomeHero() {
     photo="exterior-courtyard"
     eyebrow="A LITTLE MORE COMFORT. A LOT MORE WELCOME."
     title="Luxury rooms and suites in Port Harcourt."
-    description="Make yourself at home in Okuruama. Air-conditioned rooms, a bar and lounge, and space to come together — all near Golf Estate."
+    description="A warm welcome near Golf Estate, Okuruama. Comfortable rooms, a relaxed lounge and space to meet."
   >
     <div className="actions">
       <a className="btn" href={whatsappUrl()} target="_blank" rel="noopener">Book Direct</a>
       <AppLink className="btn outline" to="/rooms">See our rooms</AppLink>
     </div>
-    <p className="home-hero-rate">Rooms from <strong>₦[20,000]</strong><span>[Confirm direct rate]</span></p>
+    <p className="home-hero-rate">Book direct for <strong>today’s room rates</strong></p>
   </PageHero>;
 }
